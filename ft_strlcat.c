@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpedroso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 15:18:07 by mpedroso          #+#    #+#             */
-/*   Updated: 2022/10/24 15:29:51 by mpedroso         ###   ########.fr       */
+/*   Created: 2022/10/24 16:19:31 by mpedroso          #+#    #+#             */
+/*   Updated: 2022/10/24 17:19:34 by mpedroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *str, int c)
+#include "libft.h"
+
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	while (*str != '\0' && c != *str)
-		str++;
-	if (c == *str)
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	if (size <= ft_strlen(dest))
+		return (size + ft_strlen(src));
+	while (dest[j] != '\0')
+		j++;
+	while (src[i] != '\0' && ft_strlen(dest) + 1 < size)
 	{
-		return ((char *)str);
+		dest[j] = src[i];
+		i++;
+		j++;
 	}
-	return (0);
+	dest[j] = '\0';
+	return (ft_strlen(dest) + ft_strlen(&src[i]));
 }
