@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpedroso <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mpedroso <mpedroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:19:31 by mpedroso          #+#    #+#             */
-/*   Updated: 2022/10/24 17:19:34 by mpedroso         ###   ########.fr       */
+/*   Updated: 2022/10/27 19:02:58 by mpedroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,19 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	size_t	i;
 	size_t	j;
+	size_t	lend;
+	size_t	lens;
 
-	i = 0;
-	j = 0;
-	if (size <= ft_strlen(dest))
-		return (size + ft_strlen(src));
-	while (dest[j] != '\0')
-		j++;
-	while (src[i] != '\0' && ft_strlen(dest) + 1 < size)
-	{
-		dest[j] = src[i];
-		i++;
-		j++;
-	}
+	lens = ft_strlen((char *)src);
+	if (!size)
+		return (lens);
+	lend = ft_strlen(dest);
+	j = lend;
+	if (size < lend)
+		return (size + lens);
+	while (*src != '\0' && j < size - 1)
+		dest[j++] = *src++;
 	dest[j] = '\0';
-	return (ft_strlen(dest) + ft_strlen(&src[i]));
+	return (lend + lens);
 }
