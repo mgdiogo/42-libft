@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpedroso <mpedroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 14:38:49 by mpedroso          #+#    #+#             */
-/*   Updated: 2022/10/28 14:38:28 by mpedroso         ###   ########.fr       */
+/*   Created: 2022/10/28 11:14:09 by mpedroso          #+#    #+#             */
+/*   Updated: 2022/10/28 12:32:16 by mpedroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *str, int c, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*tmp;
+	char	*str;
+	int		i;
 
-	tmp = (char *)str;
-	while (n-- > 0)
-		tmp[n] = c;
+	i = 0;
+	if (!s1 || !s2)
+		return (NULL);
+	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!str)
+		return (NULL);
+	while (*s1)
+		str[i++] = *s1++;
+	while (*s2)
+		str[i++] = *s2++;
+	str[i] = '\0';
 	return (str);
 }
