@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpedroso <mpedroso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mpedroso <mpedroso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 14:26:06 by mpedroso          #+#    #+#             */
-/*   Updated: 2022/11/02 17:22:28 by mpedroso         ###   ########.fr       */
+/*   Updated: 2022/11/04 18:25:01 by mpedroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_itoa(int n)
 {
 	int		len;
 	long	nbr;
-	char *a;
+	char	*a;
 
 	nbr = n;
 	if (n < 0)

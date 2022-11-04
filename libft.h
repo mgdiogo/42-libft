@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpedroso <mpedroso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mpedroso <mpedroso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 13:33:25 by mpedroso          #+#    #+#             */
-/*   Updated: 2022/11/02 19:24:14 by mpedroso         ###   ########.fr       */
+/*   Updated: 2022/11/04 18:39:26 by mpedroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdio.h>
+
+typedef struct s_list
+{
+	void 			*content;
+	struct s_list	*next;
+} 					t_list;
 
 int		ft_isdigit(int c);
 
@@ -82,7 +88,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
-char 	*ft_itoa(int n);
+char	*ft_itoa(int n);
 
 char	**ft_split(char const *s, char c);
 

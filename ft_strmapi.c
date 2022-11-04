@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpedroso <mpedroso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mpedroso <mpedroso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 12:57:15 by mpedroso          #+#    #+#             */
-/*   Updated: 2022/11/02 14:17:50 by mpedroso         ###   ########.fr       */
+/*   Updated: 2022/11/04 18:25:12 by mpedroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*str;
 	unsigned int	i;
-	
+
 	if (!s || !f)
 		return (NULL);
 	str = malloc(ft_strlen(s) + 1);
