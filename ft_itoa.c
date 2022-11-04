@@ -1,40 +1,60 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpedroso <mpedroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/28 14:25:55 by mpedroso          #+#    #+#             */
-/*   Updated: 2022/11/02 15:45:49 by mpedroso         ###   ########.fr       */
+/*   Created: 2022/11/02 14:26:06 by mpedroso          #+#    #+#             */
+/*   Updated: 2022/11/02 17:22:28 by mpedroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	find_chr(const char *str, int c)
+static int	mlen(long n)
 {
-	while (*str != '\0' && c != *str)
-		str++;
-	if (c == *str)
+	int	mlen;
+
+	if (n == 0)
 		return (1);
-	return (0);
+	mlen = 0;
+	if (n < 0)
+	{
+		mlen += 1;
+		n *= -1;
+	}
+	while (n > 0)
+	{
+		mlen += 1;
+		n /= 10;
+	}
+	return (mlen);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_itoa(int n)
 {
-	int		i;
-	int		k;
-	int		slen;
+	int		len;
+	long	nbr;
+	char *a;
 
-	if (!s1 || !set)
+	nbr = n;
+	if (n < 0)
+		nbr *= -1;
+	len = mlen(n);
+	a = malloc(len + 1);
+	if (!a)
 		return (NULL);
-	slen = ft_strlen(s1);
-	i = 0;
-	k = 0;
-	while (find_chr(set, s1[i]))
-		i++;
-	while (slen > i && find_chr(set, s1[slen]))
-		slen--;
-	return (ft_substr(s1, i, (slen - i) + 1));
+	if (n < 0)
+		a[0] = '-';
+	if (n == 0)
+		a[0] = '0';
+	a[len] = '\0';
+	len -= 1;
+	while (nbr > 0)
+	{
+		a[len--] = (nbr % 10) + 48;
+		nbr /= 10;
+	}
+	return (a);
 }

@@ -6,7 +6,7 @@
 /*   By: mpedroso <mpedroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 13:33:25 by mpedroso          #+#    #+#             */
-/*   Updated: 2022/10/28 17:42:36 by mpedroso         ###   ########.fr       */
+/*   Updated: 2022/11/02 19:24:14 by mpedroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,15 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 
 void	ft_putendl_fd(char *s, int fd);
+
+void	ft_putnbr_fd(int n, int fd);
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+char 	*ft_itoa(int n);
+
+char	**ft_split(char const *s, char c);
 
 #endif
