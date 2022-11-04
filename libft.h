@@ -6,7 +6,7 @@
 /*   By: mpedroso <mpedroso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 13:33:25 by mpedroso          #+#    #+#             */
-/*   Updated: 2022/11/04 18:39:26 by mpedroso         ###   ########.fr       */
+/*   Updated: 2022/11/04 19:25:48 by mpedroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_itoa(int n);
 
 char	**ft_split(char const *s, char c);
+
+t_list *ft_lstnew(void *content);
 
 #endif
