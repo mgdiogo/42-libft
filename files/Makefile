@@ -13,7 +13,8 @@ ft_strdup.c ft_memcmp.c ft_memchr.c ft_calloc.c ft_substr.c ft_strjoin.c ft_strt
 ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_striteri.c ft_strmapi.c\
 ft_itoa.c ft_split.c
 
-BONUS	=		ft_lstnew.c
+BONUS	=		ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c\
+ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 OBJ		=		$(SRC:.c=.o)
 
@@ -23,10 +24,6 @@ all:			$(NAME)
 
 bonus:			$(BOBJ)
 		ar rcs	$(NAME) $(BOBJ)
-
-so:
-		$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(BONUS)
-		gcc -nostartfiles -shared -o libft.so $(OBJ) $(BOBJ)
 
 $(NAME):		$(OBJ)
 		ar rcs	$(NAME) $(OBJ)
