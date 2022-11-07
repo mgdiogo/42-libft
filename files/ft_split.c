@@ -19,8 +19,6 @@ static int	cp(char const *s, char c)
 
 	i = 0;
 	p = 0;
-	if (!s)
-		return (0);
 	while (s[i])
 	{
 		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
@@ -38,6 +36,8 @@ char	**ft_split(char const *s, char c)
 	int		k;
 	int		p;
 
+	if (!s)
+		return (0);
 	p = cp((char *)s, c);
 	strings = (char **)malloc(sizeof(char *) * (p + 1));
 	if (!strings)

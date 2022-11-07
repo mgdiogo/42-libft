@@ -25,6 +25,10 @@ all:			$(NAME)
 bonus:			$(BOBJ)
 		ar rcs	$(NAME) $(BOBJ)
 
+so:
+				$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(BONUS)
+				gcc -nostartfiles -shared -o libft.so $(OBJ) $(BOBJ)
+
 $(NAME):		$(OBJ)
 		ar rcs	$(NAME) $(OBJ)
 
