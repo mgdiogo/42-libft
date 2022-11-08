@@ -6,7 +6,7 @@
 /*   By: mpedroso <mpedroso@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 18:53:25 by mpedroso          #+#    #+#             */
-/*   Updated: 2022/11/07 18:53:26 by mpedroso         ###   ########.fr       */
+/*   Updated: 2022/11/08 12:50:25 by mpedroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if(!lst)
+	if (!lst)
 		(*lst) = new;
 	else
 	{
